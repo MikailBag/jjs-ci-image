@@ -6,3 +6,4 @@ RUN rustup default nightly-2019-01-26
 RUN rustup component add clippy
 RUN rustup target add x86_64-unknown-linux-musl
 RUN cargo install mdbook
+
