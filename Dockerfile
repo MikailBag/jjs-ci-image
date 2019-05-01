@@ -1,8 +1,6 @@
-FROM rust:latest
+FROM ubuntu:bionic
 ARG concurrency=4
-RUN apt update -y
-RUN apt install -y automake bison flex g++ git libboost-all-dev libevent-dev libssl-dev libtool make pkg-config musl musl-tools cmake
-RUN rustup default nightly-2019-04-30
-RUN rustup component add clippy rustfmt
-RUN rustup target add x86_64-unknown-linux-musl
-RUN cargo install just mdbook
+ADD install-packages.sh install-rust-toolchain.sh  /tmp/
+RUN bash /tmp/install-packages.sh
+ENV PATH=$PATH:~/.cargo/bin
+RUN bash /tmp/install-rust-toolchain.sh
