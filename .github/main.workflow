@@ -16,6 +16,6 @@ action "Docker:Build" {
 
 action "Docker:Upload" {
   uses = "actions/docker/cli@aea64bb1b97c42fa69b90523667fef56b90d7cff"
-  args = "push mikailbag/jjs-dev:latest"
+  args = "push mikailbag/jjs-dev:${GITHUB_COMMIT_SHA}"
   needs = ["Docker:Build"]
 }
