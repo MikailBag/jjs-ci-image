@@ -1,2 +1,2 @@
-TAG="mikailbag/jjs-dev:gh-${GITHUB_COMMIT_SHA}"
+TAG="mikailbag/jjs-dev:gh-${GITHUB_SHA}"
 docker build -t $TAG .
