@@ -9,9 +9,9 @@ action "Docker:Login" {
 }
 
 action "Docker:Build" {
-  uses = "actions/docker/cli@aea64bb1b97c42fa69b90523667fef56b90d7cff"
+  uses = "docker:stable"
   needs = ["Docker:Login"]
-  args = "build -t mikailbag/jjs-dev:${GITHUB_COMMIT_SHA} ."
+  runs = "sh ./run-build.sh"
 }
 
 action "Docker:Upload" {
