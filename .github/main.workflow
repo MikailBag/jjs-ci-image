@@ -9,7 +9,7 @@ action "Docker:Login" {
 }
 
 action "Docker:Build" {
-  uses = "docker:stable"
+  uses = "docker://docker:stable"
   needs = ["Docker:Login"]
   runs = "sh ./run-build.sh"
 }
