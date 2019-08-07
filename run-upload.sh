@@ -1,2 +1,2 @@
 TAG="mikailbag/jjs-dev:gh-${GITHUB_SHA}"
-docker push $TAG .
+docker push $TAG
