@@ -7,3 +7,4 @@ ADD install-packages.sh install-rust-toolchain.sh  /tmp/
 RUN bash /tmp/install-packages.sh
 ENV PATH=$PATH:/root/.cargo/bin
 RUN bash /tmp/install-rust-toolchain.sh
+ENTRYPOINT cargo
