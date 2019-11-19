@@ -1,0 +1,14 @@
+name: ci
+on:
+  push: {}
+jobs:
+  ci:
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/checkout@v1
+      - name: log into github PR
+        run: docker login docker.pkg.github.com -u mikailbag -p ${{ secrets.GITHUB_TOKEN }}
+      - name: build image
+        run: docker build -t docker.pkg.github.com/mikailbag/jjs-ci-image/img:master .
+      - name: publish image
+        run: docker push docker.pkg.github.com/mikailbag/jjs-ci-image/img:master
