@@ -1,6 +1,7 @@
 FROM rust:latest AS build
 RUN cargo install mdbook --no-default-features
 RUN cargo install cargo-udeps --no-default-features
+RUN cargo install lxtrace --no-default-features
 
 FROM ubuntu:bionic
 ARG CONCURRENCY=4
