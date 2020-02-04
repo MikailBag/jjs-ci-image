@@ -18,3 +18,4 @@ RUN apt-get update -y && apt install -y automake g++ git libsystemd-dev \
 RUN bash /tmp/install-rust-toolchain.sh
 COPY --from=build /usr/local/cargo/bin/* ~/.cargo/bin
 ENV PATH="/root/.cargo/bin/:$PATH"
+ENV DEBIAN_FRONTEND=noninteractive
