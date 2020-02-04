@@ -1,5 +1,6 @@
 FROM rust:latest AS build
 RUN apt update -y && apt install -y libunwind-dev
+ENV CARGO_TARGET_DIR=/tmp/cargo
 RUN cargo install mdbook --no-default-features
 RUN cargo install cargo-udeps --no-default-features
 RUN cargo install lxtrace --no-default-features
