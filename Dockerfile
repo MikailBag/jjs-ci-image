@@ -16,6 +16,6 @@ RUN apt-get update -y && apt install -y automake g++ git libsystemd-dev \
   libssl-dev libpq-dev libtool make pkg-config cmake curl pvs-studio sudo \
   --no-install-recommends
 RUN bash /tmp/install-rust-toolchain.sh
-COPY --from=build /usr/local/cargo/bin/* ~/.cargo/bin
+COPY --from=build /usr/local/cargo/bin/* /root/.cargo/bin
 ENV PATH="/root/.cargo/bin/:$PATH"
 ENV DEBIAN_FRONTEND=noninteractive
